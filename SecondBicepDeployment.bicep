@@ -1,4 +1,4 @@
-param location string = 'West-Europe'
+param location string = resourceGroup().location
 param vmUserName string = 'myadmin'
 @secure()
 param vmPass string
@@ -13,7 +13,6 @@ param vmPass string
 ''')
 param windowsOrlinux string
 
-var location = resourceGroup().location
 var baseName = uniqueString(resourceGroup().id)
 var vmSize = 'Standard_DS1_v2' 
 var image = {
