@@ -21,6 +21,6 @@ module demoDeployment './SecondBicepDeployment.bicep' = {
     vmUserName: 'myadmin'
     vmPass: 'Auay8idda'
     windowsOrlinux: 'windows'
-    location: resourceGroup().location
+    location: location
   }
 }
