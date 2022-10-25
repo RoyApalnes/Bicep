@@ -2,9 +2,11 @@
  
 targetScope = 'subscription'
  
-param appName string = 'FirstBicepDeployment'
+param appName string = 'SecondBicepDeployment'
 param environment string = 'Dev'
 param location string = 'westeurope'
+@secure()
+param vmPass string
  
 var rgName = toLower('rg-${appName}-${environment}-001')
  
@@ -19,7 +21,7 @@ module demoDeployment './SecondBicepDeployment.bicep' = {
   scope: rgDemoDeployment
   params: {
     vmUserName: 'myadmin'
-    vmPass: 'Auay8idda'
+    vmPass: vmPass
     windowsOrlinux: 'windows'
     location: location
   }
